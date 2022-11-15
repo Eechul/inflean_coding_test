@@ -2,28 +2,31 @@ package string;
 
 import java.util.Scanner;
 
+// 5. 특정 문자 뒤집기
 public class String5 {
 
     public static void main(String[] args) {
 //        a#b!GE*T@S
         Scanner in = new Scanner(System.in);
-        String inStr = in.next();
-        StringBuilder targetSb = new StringBuilder();
-        for (int i = 0; i < inStr.length(); i++) {
-            char inC = inStr.charAt(i);
-            if((inC >= 65 && inC <= 95) || (inC >= 97 && inC <= 120)) {
-                targetSb.append(inStr.charAt(i));
+        String answer = "";
+        char[] s = in.next().toCharArray();
+        int lt = 0;
+        int rt = s.length - 1;
+
+        while(lt < rt) {
+            if(!Character.isAlphabetic(s[lt])) {
+                lt++;
+            } else if(!Character.isAlphabetic(s[rt])) {
+                rt--;
+            } else {
+                char tmp = s[lt];
+                s[lt] = s[rt];
+                s[rt] = tmp;
+                lt++;
+                rt--;
             }
         }
-        String target = targetSb.reverse().toString();
-        int targetIdx = 0;
-        for (int j = 0; j < inStr.length(); j++) {
-            char inC = inStr.charAt(j);
-            if((inC >= 65 && inC <= 95) || (inC >= 97 && inC <= 120)) {
-                 target.charAt(targetIdx);
-            }
-        }
-
-
+        answer = String.valueOf(s);
+        System.out.println(answer);
     }
 }
