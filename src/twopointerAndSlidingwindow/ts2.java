@@ -8,7 +8,6 @@ import java.util.Scanner;
 // 2. 공통원소 구하기
 // two pointer 전략의 핵심은 정렬 상태에서의 p1, p2 비교
 public class ts2 {
-
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int p1 = 0, p2 = 0;
