@@ -2,7 +2,7 @@ package twopointerAndSlidingwindow;
 
 import java.util.Scanner;
 
-// 4. 연속 부분수열
+// 5. 연속된 자연수의 합
 public class ts5_1 {
 
     public static void main(String[] args) {
