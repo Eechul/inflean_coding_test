@@ -9,15 +9,18 @@ public class sq7 {
 
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
-        char[] n = in.next().toCharArray();
-        char[] m = in.next().toCharArray();
+        String answer = "YES";
+        char[] need = in.next().toCharArray();
+        char[] plan = in.next().toCharArray();
         Queue<Character> q = new LinkedList<>();
 
-        for (char c : n) { q.offer(c); }
-
-        for (int i=0; i<m.length; i++) {
-            if(q.contains(m[i]) && q.peek() == m[i]) { q.poll(); }
+        for (char x : need) { q.offer(x); }
+        for (char x : plan) {
+            if(q.contains(x)) {
+                if(x != q.poll()) { answer = "NO"; break; }
+            }
         }
-        System.out.println(q.size() == 0 ? "YES" : "NO");
+        if(!q.isEmpty()) {answer = "NO"; }
+        System.out.println(answer);
     }
 }
