@@ -11,13 +11,14 @@ public class sq8 {
         int N = in.nextInt();
         int M = in.nextInt();
         Queue<Person> queue = new LinkedList<>();
+
         for (int i=0; i<N; i++) {
             Person person = new Person(i, in.nextInt());
             queue.offer(person);
         }
-        Person tmpPerson = null;
-        while (tmpPerson == null || tmpPerson.id != M) {
-            tmpPerson = queue.poll();
+
+        while (true) {
+            Person tmpPerson = queue.poll();
             for (Person p : queue) {
                 if (p.danger > tmpPerson.danger) {
                     queue.offer(tmpPerson);
@@ -27,6 +28,9 @@ public class sq8 {
             }
             if (tmpPerson != null) {
                 answer++;
+                if (tmpPerson.id == M) {
+                    break;
+                }
             }
         }
         System.out.println(answer);
