@@ -2,6 +2,7 @@ package sortingAndsearching;
 
 import java.util.Scanner;
 
+// 1. 선택정렬
 public class ss1 {
 
     public static void main(String[] args) {
