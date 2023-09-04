@@ -17,10 +17,11 @@ public class ss4 {
         for (int i=0; i<N; i++) {
             arr[i] = in.nextInt();
         }
-        for (int i=0; i<N; i++) {
+
+        for (int x : arr) {
             int tmp = 0;
             for (int j=0; j<S; j++) {
-                if (arr[i] == result[j]) {
+                if (x == result[j]) {
                     tmp = result[j];
                     for (int k=j; k>0; k--) {
                         result[k] = result[k-1];
@@ -32,7 +33,7 @@ public class ss4 {
                 for (int j =S-1; j>0; j--) {
                     result[j] = result[j-1];
                 }
-                result[0] = arr[i];
+                result[0] = x;
             }
         }
 
