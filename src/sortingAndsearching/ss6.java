@@ -15,9 +15,9 @@ public class ss6 {
 
         for (int i = 0; i < N; i++) {
             heights[i] = in.nextInt();
-            sortedHeights[i] = heights[i];
         }
 
+        sortedHeights = heights.clone();
         Arrays.sort(sortedHeights);
 
         for (int i = 0; i < N; i++) {
